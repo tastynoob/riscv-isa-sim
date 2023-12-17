@@ -435,9 +435,9 @@ void difftest_memcpy(uint64_t addr, void *buf, size_t n, bool direction) {
   }
 }
 
-void difftest_regcpy(diff_context_t* dut, bool direction, bool on_demand) {
+void difftest_regcpy(diff_context_t* dut, bool direction) {
   if (direction == DIFFTEST_TO_REF) {
-    ref->set_regs(dut, on_demand);
+    ref->set_regs(dut, false);
   } else {
     ref->get_regs(dut);
   }

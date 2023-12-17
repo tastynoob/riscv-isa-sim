@@ -37,6 +37,12 @@ class rom_device_t : public abstract_device_t {
   std::vector<char> data;
 };
 
+class serial_device_t : public abstract_device_t {
+ public:
+  bool load(reg_t addr, size_t len, uint8_t* bytes);
+  bool store(reg_t addr, size_t len, const uint8_t* bytes);
+};
+
 class mem_t : public abstract_device_t {
  public:
   mem_t(reg_t size);

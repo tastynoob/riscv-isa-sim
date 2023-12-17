@@ -62,6 +62,7 @@ riscv_srcs = \
 	rocc.cc \
 	devices.cc \
 	rom.cc \
+	device_serial.cc \
 	clint.cc \
 	plic.cc \
 	ns16550.cc \

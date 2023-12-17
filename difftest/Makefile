@@ -1,5 +1,5 @@
-CC  = clang
-CXX = clang++
+CC  = gcc
+CXX = g++
 
 GUEST_ISA = riscv64
 BUILD_DIR = $(abspath ./build)

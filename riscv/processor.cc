@@ -69,7 +69,7 @@ processor_t::processor_t(const isa_parser_t *isa, const cfg_t *cfg,
   if (isa->get_max_xlen() == 32)
     set_mmu_capability(IMPL_MMU_SV32);
   else if (isa->get_max_xlen() == 64)
-#if defined(CPU_ROCKET_CHIP) || defined(CPU_NUTSHELL) || defined(CPU_XIANGSHAN)
+#if defined(CPU_ROCKET_CHIP) || defined(CPU_NUTSHELL) || defined(CPU_AURA)
     set_mmu_capability(IMPL_MMU_SV39);
 #else
     set_mmu_capability(IMPL_MMU_SV57);
@@ -451,7 +451,7 @@ void state_t::reset(processor_t* const proc, reg_t max_isa)
 #elif defined(CPU_NUTSHELL)
   csrmap[CSR_MARCHID] = std::make_shared<const_csr_t>(proc, CSR_MARCHID, 0);
   csrmap[CSR_MIMPID] = std::make_shared<const_csr_t>(proc, CSR_MIMPID, 0);
-#elif defined(CPU_XIANGSHAN)
+#elif defined(CPU_AURA)
   csrmap[CSR_MARCHID] = std::make_shared<const_csr_t>(proc, CSR_MARCHID, 25);
   csrmap[CSR_MIMPID] = std::make_shared<const_csr_t>(proc, CSR_MIMPID, 0);
 #else
