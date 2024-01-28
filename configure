@@ -5880,7 +5880,7 @@ _ACEOF
 else
 
 cat >>confdefs.h <<_ACEOF
-#define DEFAULT_ISA "RV64IMAFDC_zicntr_zihpm"
+#define DEFAULT_ISA "RV64IMC"
 _ACEOF
 
 fi

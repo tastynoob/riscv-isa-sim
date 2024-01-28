@@ -1664,3 +1664,19 @@ void jvt_csr_t::verify_permissions(insn_t insn, bool write) const {
     }
   }
 }
+
+putc_csr_t::putc_csr_t(processor_t * const proc, const reg_t addr)
+  : csr_t(proc, addr)
+{
+}
+
+reg_t putc_csr_t::read() const noexcept
+{
+  return 0;
+}
+
+bool putc_csr_t::unlogged_write(const reg_t val) noexcept
+{
+  // nothing, just aligned with rtl
+  return true;
+}

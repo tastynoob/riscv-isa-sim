@@ -546,6 +546,8 @@ void state_t::reset(processor_t* const proc, reg_t max_isa)
 
   if (proc->extension_enabled(EXT_ZCMT))
     csrmap[CSR_JVT] = jvt = std::make_shared<jvt_csr_t>(proc, CSR_JVT, 0);
+  
+  csrmap[CSR_CUSTOM_PUTC] = std::make_shared<putc_csr_t>(proc, CSR_CUSTOM_PUTC);
 
   serialized = false;
 
